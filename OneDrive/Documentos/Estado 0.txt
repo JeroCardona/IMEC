@@ -1,0 +1,64 @@
+Estado 0:
+S ->  ● E
+T ->  ● T * F
+F ->  ● ( E )
+E ->  ● E - T
+T ->  ● F
+T ->  ● T / F
+E ->  ● E + T
+F ->  ● i
+E ->  ● T
+Estado 1:
+E -> T ● * F
+E -> T ●
+E -> T ● / F
+Estado 2:
+F -> ( ● E )
+T ->  ● T * F
+F ->  ● ( E )
+E ->  ● E - T
+T ->  ● F
+T ->  ● T / F
+E ->  ● E + T
+F ->  ● i
+E ->  ● T
+Estado 3:
+E -> E ● - T
+S -> E ●
+E -> E ● + T 
+Estado 4:
+F -> i ●
+Estado 5:
+T -> F ● 
+Estado 6:
+E -> E + ● T 
+T ->  ● T * F
+T ->  ● F
+T ->  ● T / F
+F ->  ● ( E )
+F ->  ● i
+Estado 7:
+E -> E + T ●   
+Estado 8:
+E -> E - ● T 
+T ->  ● T * F
+T ->  ● F
+T ->  ● T / F
+F ->  ● ( E )
+F ->  ● i
+Estado 9:
+E -> E - T ● 
+Estado 10:
+F -> ( E ) ●
+Estado 11:
+E -> T * ● F
+F ->  ● ( E )
+F ->  ● i
+Estado 12:
+E -> T / ● F
+F ->  ● ( E )
+F ->  ● i
+Estado 13:
+E -> T * F ● 
+Estado 14:
+E -> T / F ● 

@@ -1,0 +1,8 @@
+ingenieria de requisitos :)
+
+desatrazarme despues 
+
+print("Hola mundo")
+System.out.print("Hola mundo")
+
+Cuando suban la diapositiva estudio =D

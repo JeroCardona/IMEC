@@ -1,0 +1,2 @@
+-Con lo que hemos trabajo en AWS hasta la creacion de lo ultimo, nos podemos basar en eso para el proyecto, y que más necesitamos para poder realizar todo lo solicitado.
+-Como nos podemos basar desde el ejemplo que esta subido en github de tienda-producto para nuestro proyecto

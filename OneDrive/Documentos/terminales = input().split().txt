@@ -1,0 +1,77 @@
+terminales = input().split()
+noTerminales = input().split()
+gramatica = []
+for i in range(len(noTerminales)):
+    regla = input()
+    gramatica.append(regla.split())
+
+# Construir la gramática en formato BNF
+bnf = {}
+for nt in noTerminales:
+    bnf[nt] = []
+for regla in gramatica:
+    nt = regla[0]
+    produccion = regla[1:]
+    bnf[nt].append(produccion)
+
+# Obtener los first y follow de la gramática
+first = {}
+follow = {}
+
+# Inicializar los conjuntos first y follow
+for nt in noTerminales:
+    first[nt] = set()
+    follow[nt] = set()
+
+# Calcular los conjuntos first
+def calcularFirst(nt):
+    if len(first[nt]) > 0:
+        return
+    for produccion in bnf[nt]:
+        simbolo = produccion[0]
+        if simbolo in terminales:
+            first[nt].add(simbolo)
+        elif simbolo in noTerminales:
+            calcularFirst(simbolo)
+            first[nt] |= first[simbolo]
+    return first[nt]
+
+for nt in noTerminales:
+    calcularFirst(nt)
+
+# Calcular los conjuntos follow
+follow[noTerminales[0]].add('$')
+
+def calcularFollow(nt):
+    for p in bnf:
+        for i in range(len(bnf[p])):
+            if nt in bnf[p][i]:
+                if nt == bnf[p][i][-1]:
+                    if p != nt:
+                        seguir = calcularFollow(p)
+                        follow[nt] |= seguir
+                else:
+                    j = bnf[p][i].index(nt)
+                    siguiente = bnf[p][i][j+1]
+                    if siguiente in terminales:
+                        follow[nt].add(siguiente)
+                    else:
+                        seguir = calcularFirst(siguiente)
+                        if '' in seguir:
+                            seguir -= {''}
+                            if p != nt:
+                                seguir |= calcularFollow(p)
+                        follow[nt] |= seguir
+    return follow[nt]
+
+for nt in noTerminales:
+    calcularFollow(nt)
+
+# Imprimir los conjuntos first y follow
+print("First:")
+for nt in noTerminales:
+    print(nt + ": " + str(first[nt]))
+
+print("Follow:")
+for nt in noTerminales:
+    print(nt + ": " + str(follow[nt]))

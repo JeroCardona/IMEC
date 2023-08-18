@@ -1,0 +1,57 @@
+grammar = {
+    'E': ['TX'],
+    'X': ['+TX', 'e'],
+    'T': ['FY'],
+    'Y': ['*FY', 'e'],
+    'F': ['(E)', 'i']
+}
+
+terminals = {'(', ')', 'i', '*', '+', 'e'}
+non_terminals = {'E', 'X', 'T', 'Y', 'F'}
+
+
+
+#se picha
+grammar = {
+    'S': ['ASAB', 'e'],
+    'A': ['bA','e'],
+    'B': ['aaaaaaa']
+}
+
+terminals = {'a','b','e'}
+non_terminals = {'S','A','B'}
+
+
+
+
+grammar = {
+    'S': ['ABdC'],
+    'A': ['0','1'],
+    'B': ['0'],
+    'C': ['1', '0']
+}
+
+terminals = {'d','0','1'}
+non_terminals = {'S','A','B','C'}
+
+
+
+grammar = {
+    'S': ['T+S','T'],
+    'T': ['I*T','I'],
+    'I': ['0','1','2']
+}
+
+terminals = {'+','*','0','1','2'}
+non_terminals = {'S','T','I'}
+
+
+
+grammar = {
+    'S': ['S+S','S*S','0','1','2']
+}
+
+terminals = {'+','*','0','1','2'}
+non_terminals = {'S'}
+
+

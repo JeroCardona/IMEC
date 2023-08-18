@@ -1,0 +1,5 @@
+cd Downloads
+
+mongoimport --uri "mongodb+srv://cluster0.tc0dwt2.mongodb.net" --db prequiz3 --collection Zips --username jdacunag --type json --file zips.json
+
+#Copiar la uri de Atlas
