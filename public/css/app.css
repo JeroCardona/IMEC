@@ -1,0 +1,34 @@
+.bg-secondary {
+    background-color: #000000 !important;
+}
+
+.copyright {
+    background-color: #000000;
+}
+
+.bg-primary {
+    background-color: #54177a !important;
+}
+
+.img-card{
+    height: 18vw;
+    object-fit: cover;
+}
+
+.custom-navbar {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.custom-navbar .navbar-brand img {
+    max-height: 50px;
+}
+
+.custom-navbar .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+.custom-navbar svg {
+    margin-right: 5px;
+    vertical-align: middle;
+}
